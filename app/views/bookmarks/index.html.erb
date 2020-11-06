@@ -4,7 +4,7 @@
 
 <hr>
 
-<form style="display: flex; align-items: center; justify-content: space-around;">
+<form id="new-bookmark-form" style="display: flex; align-items: center; justify-content: space-around;">
   <h3>Add new bookmark:</h3>
 
   <label for="name">Name</label>
@@ -13,16 +13,16 @@
   <label for="url">URL</label>
   <input type="text" name="url" id="url">
   
-  <label for="category_id">Category</label>
-  <select name="category_id" id="category_id">
+  <label for="category-id">Category</label>
+  <select name="category-id" id="category-id">
     <%= @categories.each do |category| %>
       <option value="<%= category.id %>"><%= category.name %></option>
     <% end %>
   </select>
 
 
-  <label for="type_id">Type</label>
-  <select name="type_id" id="type_id">
+  <label for="type-id">Type</label>
+  <select name="type-id" id="type-id">
     <%= @types.each do |type| %>
       <option value="<%= type.id %>"><%= type.name %></option>
     <% end %>
@@ -40,23 +40,11 @@
       <th>URL</th>
       <th>Type</th>
       <th>Category</th>
-      <th colspan="3"></th>
+      <th>Details</th>
     </tr>
   </thead>
 
-  <tbody>
-    <% @bookmarks.each do |bookmark| %>
-      <tr>
-        <td><%= bookmark.name %></td>
-        <td><%= bookmark.url %></td>
-        <td><%= bookmark.type %></td>
-        <td><%= bookmark.category %></td>
-        <td><%= link_to 'Show', bookmark %></td>
-        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <tbody id="table-body"></tbody>
 </table>
 
 <br>
