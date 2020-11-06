@@ -1,4 +1,4 @@
 class Bookmark < ApplicationRecord
-  belongs_to :type
-  belongs_to :category
+  belongs_to :type, optional: true
+  belongs_to :category, optional: true
 end
