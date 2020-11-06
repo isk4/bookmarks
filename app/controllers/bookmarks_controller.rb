@@ -5,6 +5,8 @@ class BookmarksController < ApplicationController
   # GET /bookmarks.json
   def index
     @bookmarks = Bookmark.all
+    @categories = Category.all
+    @types = Type.all
   end
 
   # GET /bookmarks/1
