@@ -23,12 +23,20 @@
 
   <div class="field">
     <%= form.label :type_id %>
-    <%= form.select "type_id", options_from_collection_for_select(@types, :id, :name) %>
+    <% unless bookmark.type.nil? %>
+      <%= form.select "type_id", options_from_collection_for_select(@types, :id, :name, bookmark.type.id), prompt: "Select a type" %>
+    <% else %>
+      <%= form.select "type_id", options_from_collection_for_select(@types, :id, :name), prompt: "Select a type" %>
+    <% end %>
   </div>
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.select "category_id", options_from_collection_for_select(@categories, :id, :name) %>
+    <% unless bookmark.category.nil? %>
+      <%= form.select "category_id", options_from_collection_for_select(@categories, :id, :name, bookmark.category.id), prompt: "Select a category" %>
+    <% else %>
+      <%= form.select "category_id", options_from_collection_for_select(@categories, :id, :name), prompt: "Select a category" %>
+    <% end %>
   </div>
 
   <div class="actions">
