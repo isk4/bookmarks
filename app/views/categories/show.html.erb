@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @category.category %>
+  <strong>Parent category:</strong>
+  <%= @category.category.nil? ? "Undefined" : @category.category.name %>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |

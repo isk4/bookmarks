@@ -3,11 +3,11 @@ class Bookmark < ApplicationRecord
   belongs_to :category, optional: true
 
   def type_name
-    self.type.name
+    self.type.nil? ? "Undefined" : self.type.name
   end
 
   def category_name
-    self.category.name
+    self.category.nil? ? "Undefined" : self.category.name
   end
 
   def url_link

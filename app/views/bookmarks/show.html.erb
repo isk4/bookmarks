@@ -1,14 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @bookmark.name %>
+</p>
+
+<p>
+  <strong>URL:</strong>
+  <%= @bookmark.url %>
+</p>
+
+<p>
   <strong>Type:</strong>
   <%= @bookmark.type_name %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @bookmark.category_name %>
+  <%= @bookmark.category_name.nil? ? "Undefined" : @bookmark.category_name %>
 </p>
 
 <%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
+<%= link_to 'Delete', bookmark_path(@bookmark), method: :delete, data: { confirm: 'Are you sure?' }%> |
 <%= link_to 'Back', root_path %>

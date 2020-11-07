@@ -2,5 +2,5 @@
 
 <%= render 'form', bookmark: @bookmark %>
 
-<%= link_to 'Show', @bookmark %> |
+<%= link_to 'Delete', bookmark_path(@bookmark), method: :delete, data: { confirm: 'Are you sure?' }%> |
 <%= link_to 'Back', root_path %>

@@ -7,22 +7,24 @@
 <form id="new-bookmark-form" style="display: flex; align-items: center; justify-content: space-around;">
   <h3>Add new bookmark:</h3>
 
-  <label for="name">Name</label>
+  <label for="name">Name:</label>
   <input type="text" name="name" id="name">
 
-  <label for="url">URL</label>
+  <label for="url">URL:</label>
   <input type="text" name="url" id="url">
   
-  <label for="category-id">Category</label>
+  <label for="category-id">Category:</label>
   <select name="category-id" id="category-id">
+    <option value="" selected>Select a category</option>
     <%= @categories.each do |category| %>
       <option value="<%= category.id %>"><%= category.name %></option>
     <% end %>
   </select>
 
 
-  <label for="type-id">Type</label>
+  <label for="type-id">Type:</label>
   <select name="type-id" id="type-id">
+    <option value="" selected>Select a type</option>
     <%= @types.each do |type| %>
       <option value="<%= type.id %>"><%= type.name %></option>
     <% end %>
@@ -40,7 +42,6 @@
       <th>URL</th>
       <th>Type</th>
       <th>Category</th>
-      <th>Details</th>
     </tr>
   </thead>
 
@@ -49,4 +50,3 @@
 
 <br>
 
-<%= link_to 'New Bookmark', new_bookmark_path %>

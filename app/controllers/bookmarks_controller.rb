@@ -4,7 +4,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
   def index
-    @bookmarks = Bookmark.all
+    @bookmarks = Bookmark.all.includes(:type, :category)
     @categories = Category.all
     @types = Type.all
   end
@@ -21,6 +21,8 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/1/edit
   def edit
+    @categories = Category.all
+    @types = Type.all
   end
 
   # POST /bookmarks
@@ -30,7 +32,7 @@ class BookmarksController < ApplicationController
 
     respond_to do |format|
       if @bookmark.save
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
+        format.html { redirect_to root_path }
         format.json { render :show, status: :created, location: @bookmark }
       else
         format.html { render :new }

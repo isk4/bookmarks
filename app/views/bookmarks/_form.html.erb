@@ -12,13 +12,23 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+ 
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
     <%= form.label :type_id %>
-    <%= form.text_field :type_id %>
+    <%= form.select "type_id", options_from_collection_for_select(@types, :id, :name) %>
   </div>
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.text_field :category_id %>
+    <%= form.select "category_id", options_from_collection_for_select(@categories, :id, :name) %>
   </div>
 
   <div class="actions">
