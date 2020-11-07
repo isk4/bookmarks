@@ -17,7 +17,7 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @bookmark.category_name.nil? ? "Undefined" : @bookmark.category_name %>
+  <%= @bookmark.category_name %>
 </p>
 
 <%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |

@@ -7,7 +7,7 @@
 
 <p>
   <strong>Parent category:</strong>
-  <%= @category.category.nil? ? "Undefined" : @category.category.name %>
+  <%= @category.parent_category %>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |

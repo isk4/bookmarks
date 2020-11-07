@@ -19,9 +19,9 @@
   <div class="field">
     <%= form.label :category_id %>
     <% unless category.category.nil? %>
-      <%= form.select "category", options_from_collection_for_select(@categories, :id, :name, category.category.id) %>
+      <%= form.select "category_id", options_from_collection_for_select(@categories, :id, :name, category.category.id) %>
     <% else %>
-      <%= form.select "category", options_from_collection_for_select(@categories, :id, :name), prompt: "Select a category" %>
+      <%= form.select "category_id", options_from_collection_for_select(@categories, :id, :name), prompt: "Select a category" %>
     <% end %>
   </div>
 

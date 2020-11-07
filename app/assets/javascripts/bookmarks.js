@@ -4,8 +4,8 @@ d.addEventListener("DOMContentLoaded", () => {
     
     d.addEventListener("turbolinks:load", () => {
         
-        let table = d.querySelector("#table-body");
         function renderTable() {
+            let table = d.querySelector("#table-body");
             table.innerHTML = "";
     
             fetch("/bookmarks.json").then(response => response.json()).then(data => {
